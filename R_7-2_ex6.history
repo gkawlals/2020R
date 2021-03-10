@@ -1,0 +1,11 @@
+library("ggplot2")
+DF <- diamonds
+head(DF,3)
+str(DF)
+Lm < lm(price~carat,data=F)
+Lm < lm(price~carat,data=DF)
+Lm <- lm(price~carat,data=DF)
+Lm
+summary(Lm)
+NewDiamond <- data.frame(carat=c(10,20))
+predict(Lm,newdata=NewDiamond)

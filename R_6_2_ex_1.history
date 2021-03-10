@@ -1,0 +1,8 @@
+x <- seq(from =0, to=100, by=1)
+x
+y <- bnorm( x, mean=50, sd=12)
+y <- dnorm( x, mean=50, sd=12)
+t
+y
+plot(x,y,type="1")
+plot(x,y,type="l")

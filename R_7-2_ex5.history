@@ -1,0 +1,18 @@
+DF <- mtcars
+head(DF,3)
+str(DF)
+Lm <- lm(mpg~wt, data=F)
+Lm <- lm(mpg~wt, data=DF)
+Lm
+summary(Lm)
+b <- predict(Lm)
+b
+DF$mpg[1]
+b[1]
+Com <- data.frame(mpg=DF$mpg, fittedMPG=b)
+Com
+NewCar <- data.frame(wt=6)
+DF$mpg[1]
+predict(Lm, newdata=NewCar)
+NewCar2 <- data.frame(wt=0.4)
+predict(Lm, newdata=NewCar2)

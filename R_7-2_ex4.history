@@ -1,0 +1,30 @@
+head(airquality,5)
+plot(airquality)
+Lm <- lm(Temp~Ozone+Solar.R+Wind, data=airquality)
+Lm
+summary(Lm)
+DF <- read.csv("example_kbo2015_player.csv", stringsAsFactors=F, na="-")
+str(DF)
+DF$AVG <- as.numeric(DF$AVG)
+DF$GO.AO <- as.numeric(DF$GO.AO)
+DF$BB.K <- as.numeric(DF$BB.K)
+DF$P.PA <- as.numeric(DF$P.PA)
+DF$ISOP <- as.numeric(DF$ISOP)
+Cors
+Cors <- cor(DF$HR, DF[,5:length(DF)], use="pairwise.complete.obs")
+Cors
+Cors <- Cors[,order(Cors)]
+Cors
+DF$HR[DF$HR == 0 ] <- NA
+DF$RBI[DF$HBI ==0 ] <- NA
+DF$XBH[DF$XBH ==0 ] <- NA
+DF$TB[DF$TB ==0 ] <- NA
+DF$$XR[DF$XR ==0 ] <- NA
+DF$XR[DF$XR ==0 ] <- NA
+DF$GW.RBI[DF$GW.RBI ==0 ] <- NA
+DF <- na.omit(DF)
+Lm <- lm(HR~RBI+XBH+TH+XR+R, data=F)
+Lm <- lm(HR~RBI+XBH+TH+XR+R, data=DF)
+Lm <- lm(HR~RBI+XBH+TB+XR+R, data=DF)
+Lm
+summary(Lm)

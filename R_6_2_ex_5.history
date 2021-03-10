@@ -1,0 +1,14 @@
+Population <- read.csv("6_test2_population.csv")
+head(Pooulation, 10)
+head(Population, 10)
+Population <- Population[-1]
+head(Population,2)
+mean(Population$point)
+sd(Population$point)
+CI <- qnorm(c(0.05, 0.95), mean=mean(Population$point), sd=sd(Population$point))
+CI
+Sample <- read.csv("6_test2")
+Sample <- read.csv("6_test2.csv")
+head(Sample,3)
+CI
+mean(Sample$point)

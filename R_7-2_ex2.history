@@ -1,0 +1,22 @@
+DF <- read.csv("example_kbo2015_player.csv",stringsAsFactors=F,na="-")
+str(DF)
+par(mfrow=c(2,2))
+plot(Lm)
+DF$AVG <- as.numeric(DF$AVG)
+DF$GO.AP <- as.numeric(DF$GO.AO)
+DF$GO.AO <- as.numeric(DF$GO.AO)
+DF$P.PA <- as.numeric(DF$P.PA)
+DF$BB.K <- as.numeric(DF$BB.K)
+DF$ISOP <- as.numeric(DF$ISOP)
+Cors <- cor(DF$HR,DF[,5 : length(DF)],use="pairwise.complete.obs")
+Cors
+Cors <- Cors[,order(Cors)]
+Cors
+DF$HR[DF$HR==0] <- NA
+DF$AO[DF$AO==0] <- NA
+DF <- na.omit(DF)
+Lm <- lm(HR~AO, data=DF)
+Lm
+summary(Lm)
+par(mfrow=c(2,2))
+plot(Lm)

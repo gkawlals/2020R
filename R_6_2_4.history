@@ -1,0 +1,18 @@
+data <- rnorm(300, mean=70, sd=20)
+Data <- density(data)
+Data
+Plot(Data)
+plot(Data)
+library("ggplot2")
+DF <- data.frame(data)
+DF
+ggplot(DF, aes=(x=data)) + geom_density()
+CI <- qnorm(c(0.05, 0.95),mean=623, sd=90)
+CI
+Sample <- read.csv("example_test_satatistic_ex1_sample.csv")
+Sample <- read.csv("6_test1.csv")
+head(Sample, 3)
+Sample <- Sample[-1]
+CI
+mean(Sample$point)
+Population <- read.csv("6_test2_population.csv")

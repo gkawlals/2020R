@@ -1,0 +1,22 @@
+DF <- mrcars
+DF <- mtcars
+str(DF)
+Lm <- lm(hp~cyl+wt, data=DF)
+Lm
+summary(Lm)
+DF <- read.csv("example_kopo2015.csv")
+haed(DF,3)
+hea(DF,3)
+head(DF,3)
+str(DF)
+Lm <- lm(HR~TB, data=DF)
+Lm
+summary(Lm)
+b <- predict(Lm)
+b
+DF$HR[1]
+b[1]
+Com <- data.frame(team=DF$team, HR=DF$HR, fittedHR=b)
+Com
+NewTeam <- data.frame(TB=1600)
+predict(Lm, newdata=NewTeam)
